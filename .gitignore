@@ -165,9 +165,6 @@ src/logs/*.log.*
 
 
 data/
-fil-result/
-
-set_env_vars.sh
 
 *.html
 *.csv
