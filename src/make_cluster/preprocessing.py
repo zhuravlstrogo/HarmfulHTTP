@@ -47,14 +47,13 @@ def handle_features(load_path, upload_path, pretrained_model='sberbank-ai/ruRobe
     dataset['RESPONSE_CODE'] = dataset['RESPONSE_CODE'].astype('int')
 
     dataset = dataset.fillna('Неизвестно')
+    dataset.drop(['EVENT_ID'], axis=1, inplace=True)
     logging.info(f"NULL values in dataset: {dataset.isnull().sum().sum()}")
     
     cat_features = list(dataset.loc[:, dataset.dtypes == object].columns)
-    cat_features.remove('EVENT_ID')
-
     num_features = list(set(dataset.columns).difference(set(cat_features)))
     
-    logging.info(f"Len of cat_features {len(cat_features)}, len of num_features {len(num_features)}")
+    logging.info(f"Len of cat_features {len(cat_features)} \n, len of num_features {len(num_features)}")
 
     for col in cat_features:
         dataset[col] = dataset[col].astype('str')
@@ -77,7 +76,7 @@ def handle_features(load_path, upload_path, pretrained_model='sberbank-ai/ruRobe
     
     logging.info(f"New feature's shape {dataset[num_features].shape}")
 
-    dataset[num_features].to_csv(upload_path, index=False)
+    dataset[num_features].to_csv(upload_path, index=True)
     logging.info(f"New features saved to {upload_path}")
 
 

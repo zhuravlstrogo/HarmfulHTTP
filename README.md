@@ -10,14 +10,18 @@
 
 ### `/notebooks`
 
-0.1.feature_transform.ipynb - основной ноутбук исследования и преобразования фичей
-0.2.alternative_feature_transform.ipynb - альтернативный вариант преобразования категориальных фичей (не доработан)
-1.0.select_num_clusters.ipynb - графики подбора оптимального количества кластеров
-2.1.make_clusters.ipynb - основной ноутбук с различными алгоритмами кластеризации
-2.2.pycaret.ipynb - дополнительный ноутбук с различными алгоритмами кластеризации (не доработан)
+0.1.feature_transform.ipynb - основной ноутбук исследования и преобразования фичей :white_check_mark:
+
+0.2.alternative_feature_transform.ipynb - альтернативный вариант преобразования категориальных фичей (в разработке :hourglass:)
+
+1.0.select_num_clusters.ipynb - графики подбора оптимального количества кластеров :white_check_mark:
+
+2.1.make_clusters.ipynb - основной ноутбук с различными алгоритмами кластеризации :white_check_mark:
+
+2.2.pycaret.ipynb - дополнительный ноутбук с различными алгоритмами кластеризации (в разработке :hourglass:)
 
 ### `/src/make_clusters`
-preprocessiing.py make_clusters.py - скрипты для инференса на данных, которые лежат в data/ с названием 'part_10.csv.'. Результаты сохраняются в data/result.csv.
+preprocessiing.py dbscan.py - скрипты для инференса на данных, которые лежат в data/part_10.csv (название захардкожено). Результаты сохраняются в data/result.csv.
 
 log.py - для сохранения логов в src/make_cluster/logs/update.logs
 
@@ -27,7 +31,7 @@ environment.yml - зависимости проекта, для установк
 conda env create -f /src/make_cluster/environment.yml
 ```
 
-Для того, чтобы запустить в докер контейнере:
+Для того, чтобы запустить инференс в докер контейнере:
 
 ```bash 
 docker run make-cluster:1.0.0
