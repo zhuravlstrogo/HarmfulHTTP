@@ -1,0 +1,33 @@
+name: make_cluster
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+  # - fastai
+dependencies:
+  - python==3.8
+  - pip
+  # BASICS
+  - numpy
+  - pandas
+  - tqdm
+  # VISUALIZATION
+  - matplotlib
+  - seaborn
+  - pip:
+     - category-encoders==2.6.3
+     - gensim==4.3.2
+     - gower==0.1.2
+     - scipy==1.10.1
+     - ipython==8.12.3
+     - joblib==1.2.0
+     - kmedoids==0.5.0
+     - kmodes==0.12.2
+     - plotly-resampler==0.9.2
+    - plotnine==0.12.4
+    - pycaret==3.2.0
+    - tokenizers==0.15.1
+    - transformers==4.37.1
+    - tqdm==4.64.1
+    - umap-learn==0.5.5
+
